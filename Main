@@ -50,11 +50,11 @@ FBTab:AddButton({
     Name = "Kill Nearest Frostbite + Retro",
     Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
-        wait(0.4)
+        wait(0.2)
         game:GetService("ReplicatedStorage").GeneralAbility:FireServer("0")
         wait(0.1)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
-        wait(0.1)
+        wait(0.2)
         game:GetService("ReplicatedStorage").RetroAbility:FireServer("Ban Hammer")
     end    
 })
