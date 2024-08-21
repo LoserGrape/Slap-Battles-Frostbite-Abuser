@@ -1,0 +1,118 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({
+    Name = "Repository Hub | Frostbite Abuser",
+    HidePremium = false,
+    SaveConfig = false,
+    ConfigFolder = "Orion",
+    IntroText = "Frostbite Abuser | Repository",
+    Draggable = True
+})
+
+local FBTab = Window:MakeTab({
+	Name = "Frostbite Abuser",
+	Icon = "rbxassetid://7733955740",
+	PremiumOnly = false
+})
+
+local FB1Section = FBTab:AddSection({
+	Name = "FrostBite Abuser - Repository Hub | Slap Battles"
+})
+
+FBTab:AddParagraph("Warning","you must have frostbite, if you dont have frostbite you can get it in the others tab! and subscwibe to @SlapBattlesRepository on youtube UwU, anyways,")
+
+-- Toggle Variable
+local isToggleOn = false
+
+-- Function to execute the ability every 0.5 seconds
+local function toggleAbilityLoop()
+    while isToggleOn do
+        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("0")
+        task.wait(0.5)
+    end
+end
+
+-- Add the toggle button
+FBTab:AddToggle({
+    Name = "Auto-Spam Frostbite Ability",
+    Default = false,
+    Callback = function(value)
+        isToggleOn = value
+        if isToggleOn then
+            -- Start the loop when the toggle is turned on
+            toggleAbilityLoop()
+        end
+    end    
+})
+
+-- Function to stop the loop when the toggle is turned off
+isToggleOn = false
+
+FBTab:AddButton({
+	Name = "Kill Nearest Frostbite + Retro",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
+				wait(1)
+			 game:GetService("ReplicatedStorage").GeneralAbility:FireServer("0")
+			wait(1)
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
+	  wait(0.1)
+	 game:GetService("ReplicatedStorage").RetroAbility:FireServer("Ban Hammer")
+  	end    
+})
+
+local FB2Section = FBTab:AddSection({
+	Name = "FrostBite Abuser Other - Repository Hub | Slap Battles"
+})
+
+FBTab:AddButton({
+	Name = "Kill Nearest Frostbite + Null",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
+				wait(1)
+			 game:GetService("ReplicatedStorage").GeneralAbility:FireServer("0")
+			wait(1)
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
+	  wait(0.1)
+	 game:GetService("ReplicatedStorage").NullAbility:FireServer()
+  	end    
+})
+
+-- Toggle Variable
+local isToggleOn = false
+local loopDelay = 0.1  -- Default delay time
+
+-- Function to execute the ability every `loopDelay` seconds
+local function toggleAbilityLoop()
+    while isToggleOn do
+        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("0")
+        task.wait(loopDelay)
+    end
+end
+
+-- Add the toggle button
+FBTab:AddToggle({
+    Name = "Frostbite Auto-Use Slider",
+    Default = false,
+    Callback = function(value)
+        isToggleOn = value
+        if isToggleOn then
+            -- Start the loop when the toggle is turned on
+            toggleAbilityLoop()
+        end
+    end    
+})
+
+-- Add the slider to adjust the loop delay time
+FBTab:AddSlider({
+    Name = "Frostbite Interval Change",
+    Min = 0.5,
+    Max = 10,
+    Default = loopDelay,
+    Color = Color3.fromRGB(255, 165, 0),
+    Increment = 0.1,
+    ValueName = "Seconds",
+    Callback = function(value)
+        loopDelay = value
+    end    
+})
