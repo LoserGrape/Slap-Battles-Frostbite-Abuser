@@ -108,3 +108,116 @@ local OTab = Window:MakeTab({
 	Icon = "rbxassetid://7733917120",
 	PremiumOnly = false
 })
+
+local O1Section = OTab:AddSection({
+	Name = "Other Tab - Repository Hub "
+})
+
+OTab:AddParagraph("OTHER","this tab is used for getting the badges required for this script, or overall modifying the players speed, or maybe antis")
+
+OTab:AddButton({
+	Name = "Get Glove FrostBite",
+	Callback = function()
+local teleportFunc = queueonteleport or queue_on_teleport
+    if teleportFunc then
+        teleportFunc([[
+            if not game:IsLoaded() then
+                game.Loaded:Wait()
+            end
+            repeat wait() until game.Players.LocalPlayer
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-554, 177, 56)
+wait(0.7)
+for i,v in ipairs(game:GetService("Workspace"):GetDescendants()) do
+            if v.ClassName == "ProximityPrompt" then
+                fireproximityprompt(v)
+            end
+        end
+
+OTab:AddParagraph("Sliders","this is overall used to set your speed or jump-power, and tbh idk why you need this lol")
+
+-- Add the slider to adjust WalkSpeed
+OTab:AddSlider({
+    Name = "WalkSpeed",
+    Min = 16,  -- Default Roblox walk speed
+    Max = 100,  -- Maximum walk speed
+    Default = 16,  -- Start at default walk speed
+    Color = Color3.fromRGB(153, 153, 102),  -- Blue color for the slider
+    Increment = 1,
+    ValueName = "WalkSpeed",
+    Callback = function(value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+    end    
+})
+
+-- Add the slider to adjust JumpPower
+OTab:AddSlider({
+    Name = "Jump-Power",
+    Min = 50,  -- Default Roblox jump power
+    Max = 200,  -- Maximum jump power
+    Default = 50,  -- Start at default jump power
+    Color = Color3.fromRGB(153, 153, 102),  -- Blue color for the slider
+    Increment = 1,
+    ValueName = "JumpPower",
+    Callback = function(value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+    end    
+})
+
+local O2Section = OTab:AddSection({
+	Name = "Anti Section - Repository Hub"
+})
+
+OTab:AddToggle({
+	Name = "Anti Death Barriers",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+for i,v in pairs(game.Workspace.DEATHBARRIER:GetChildren()) do
+                    if v.ClassName == "Part" and v.Name == "BLOCK" then
+                        v.CanTouch = false
+                    end
+                end
+workspace.DEATHBARRIER.CanTouch = false
+workspace.DEATHBARRIER2.CanTouch = false
+workspace.dedBarrier.CanTouch = false
+workspace.ArenaBarrier.CanTouch = false
+workspace.AntiDefaultArena.CanTouch = false
+else
+for i,v in pairs(game.Workspace.DEATHBARRIER:GetChildren()) do
+                    if v.ClassName == "Part" and v.Name == "BLOCK" then
+                        v.CanTouch = true
+                    end
+                end
+workspace.DEATHBARRIER.CanTouch = true
+workspace.DEATHBARRIER2.CanTouch = true
+workspace.dedBarrier.CanTouch = true
+workspace.ArenaBarrier.CanTouch = true
+workspace.AntiDefaultArena.CanTouch = true
+end
+	end    
+})
+
+OTab:AddToggle({
+	Name = "Anti Ragdoll",
+	Default = false,
+	Callback = function(Value)
+        _G.AntiRagdoll = Value
+while _G.AntiRagdoll do
+if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character:FindFirstChild("Torso") and game.Players.LocalPlayer.Character:FindFirstChild("Ragdolled") then
+if game.Players.LocalPlayer.Character:FindFirstChild("Ragdolled") and game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == true then
+repeat task.wait()
+if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+game.Players.LocalPlayer.Character.Torso.Anchored = true
+end
+until game.Players.LocalPlayer.Character:FindFirstChild("Ragdolled") and game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == false
+if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+game.Players.LocalPlayer.Character.Torso.Anchored = false
+end
+end
+end
+task.wait()
+end
+	end    
+})
+
+OTab:AddParagraph("Notice","i was a little lazy on the anti section but wasnt lazy on the normal stuff :3")
