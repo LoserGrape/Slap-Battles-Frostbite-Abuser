@@ -143,7 +143,7 @@ OTab:AddParagraph("Sliders", "This is overall used to set your speed or jump-pow
 -- Add the slider to adjust WalkSpeed
 OTab:AddSlider({
     Name = "WalkSpeed",
-    Min = 16,  -- Default Roblox walk speed
+    Min = 21,  -- Default Roblox walk speed
     Max = 100,  -- Maximum walk speed
     Default = 16,  -- Start at default walk speed
     Color = Color3.fromRGB(153, 153, 102),  -- Color for the slider
