@@ -16,7 +16,7 @@ local FBTab = Window:MakeTab({
 })
 
 local FB1Section = FBTab:AddSection({
-    Name = "FrostBite Abuser - Repository Hub | Slap Battles"
+    Name = "Frostbite Abuse - Repository Hub | Slap Battles"
 })
 
 FBTab:AddParagraph("Warning", "You must have frostbite, if you don't have frostbite you can get it in the others tab! And subscribe to @SlapBattlesRepository on YouTube UwU, anyways,")
@@ -244,3 +244,5 @@ CTab:AddButton({
 })
 
 CTab:AddParagraph("End of script","so yeah this is the end of the script so go shoo shoo haah")
+
+OrionLib:Init()
