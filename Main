@@ -93,9 +93,9 @@ FBTab:AddToggle({
 FBTab:AddSlider({
     Name = "Frostbite Interval Change",
     Min = 0.5,
-    Max = 10,
+    Max = 2.0,
     Default = loopDelay,
-    Color = Color3.fromRGB(0, 0, 255),  -- Blue color for the slider
+    Color = Color3.fromRGB(153, 204, 255),  -- Blue color for the slider
     Increment = 0.1,
     ValueName = "Seconds",
     Callback = function(value)
