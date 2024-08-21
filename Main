@@ -104,7 +104,7 @@ FBTab:AddSlider({
 })
 
 local OTab = Window:MakeTab({
-    Name = "Other",
+    Name = "Other Stuff",
     Icon = "rbxassetid://7733917120",
     PremiumOnly = false
 })
