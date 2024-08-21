@@ -10,7 +10,7 @@ local Window = OrionLib:MakeWindow({
 })
 
 local FBTab = Window:MakeTab({
-    Name = "Frostbite Abuser",
+    Name = "Frostbite Abuse",
     Icon = "rbxassetid://7733955740",
     PremiumOnly = false
 })
@@ -92,8 +92,8 @@ FBTab:AddToggle({
 -- Add the slider to adjust the loop delay time
 FBTab:AddSlider({
     Name = "Frostbite Interval Change",
-    Min = 0.5,
-    Max = 2.0,
+    Min = 0.5,  -- Minimum value set to 0.5 seconds
+    Max = 10,  -- Maximum value set to 10 seconds
     Default = loopDelay,
     Color = Color3.fromRGB(153, 204, 255),  -- Blue color for the slider
     Increment = 0.1,
