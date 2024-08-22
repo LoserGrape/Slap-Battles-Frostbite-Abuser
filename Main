@@ -49,7 +49,7 @@ FBTab:AddButton({
 	Name = "Freeze Nearest Player",
 	Callback = function()
       		loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
-                wait(0.1)
+                wait(0.2)
                 game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
   	end    
 })
