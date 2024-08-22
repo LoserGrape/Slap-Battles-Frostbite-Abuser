@@ -54,6 +54,10 @@ FBTab:AddButton({
   	end    
 })
 
+local FBNSection = FBTab:AddSection({
+	Name = "Kill Section - Frostbite Abuse"
+})
+
 -- Add the button for "Kill Nearest Frostbite + Retro"
 FBTab:AddButton({
     Name = "Kill Nearest Frostbite + Retro",
@@ -61,9 +65,9 @@ FBTab:AddButton({
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
         wait(0.2)
         game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
-        wait(0.2)
+        wait(0.1)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
-        wait(0.3)
+        wait(0.1)
         game:GetService("ReplicatedStorage").RetroAbility:FireServer("Ban Hammer")
     end    
 })
@@ -73,7 +77,7 @@ FBTab:AddButton({
     Name = "Kill Nearest Frostbite + Null",
     Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
-        wait(0.2)
+        wait(0.1)
         game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
         wait(0.1)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
@@ -253,9 +257,9 @@ CTab:AddButton({
 CTab:AddParagraph("My Accounts","my official youtube account is linked within this script, my scriptblox account is the one who first posted this, @whaleroblox :3 anyways you should really pay respects cuz i did this solo")
 
 CTab:AddButton({
-	Name = "Pay Your Respect",
+	Name = "Copy Scriptblox Account",
 	Callback = function()
-      		setclipboard("respect payed + :3")
+      		setclipboard("https://scriptblox.com/u/WhaleRoblox")
   	end    
 })
 
