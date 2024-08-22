@@ -55,13 +55,26 @@ FBTab:AddButton({
 })
 
 FBTab:AddTextbox({
-    Name = "Freeze Someone",
-    Default = "Text",
+    Name = "Enter Freeze Someone",
+    Default = "",
     TextDisappear = true,
     Callback = function(value)
         teleportToPlayer(value)
         wait(0.2)
         game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
+    end
+})
+
+TeleportTab:AddButton({
+    Name = "Freeze Enter",
+    Callback = function()
+        if targetUsername ~= "" then
+            teleportToPlayer(targetUsername)
+            wait(0.2)
+            game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
+        else
+            print("haha no")
+        end
     end
 })
 
@@ -275,6 +288,8 @@ CTab:AddButton({
 })
 
 CTab:AddParagraph("End of script","so yeah this is the end of the script so go shoo shoo haah")
+
+local targetUsername = ""
 
 local function teleportToPlayer(username)
     local players = game:GetService("Players")
