@@ -45,22 +45,27 @@ FBTab:AddToggle({
     end    
 })
 
+FBTab:AddButton({
+	Name = "Freeze Nearest Player",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
+                wait(0.1)
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
+  	end    
+})
+
 -- Add the button for "Kill Nearest Frostbite + Retro"
 FBTab:AddButton({
     Name = "Kill Nearest Frostbite + Retro",
     Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
         wait(0.2)
-        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("0")
-        wait(0.1)
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
+        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
         wait(0.2)
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
+        wait(0.3)
         game:GetService("ReplicatedStorage").RetroAbility:FireServer("Ban Hammer")
     end    
-})
-
-local FB2Section = FBTab:AddSection({
-    Name = "FrostBite Abuser Other - Repository Hub | Slap Battles"
 })
 
 -- Add the button for "Kill Nearest Frostbite + Null"
@@ -68,13 +73,17 @@ FBTab:AddButton({
     Name = "Kill Nearest Frostbite + Null",
     Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
-        wait(1)
-        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("0")
-        wait(1)
+        wait(0.2)
+        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
+        wait(0.1)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
         wait(0.1)
         game:GetService("ReplicatedStorage").NullAbility:FireServer()
     end    
+})
+
+local FB2Section = FBTab:AddSection({
+    Name = "FrostBite Abuser Other - Repository Hub | Slap Battles"
 })
 
 -- Add the toggle button for Frostbite Auto-Use Slider
@@ -101,6 +110,13 @@ FBTab:AddSlider({
     Callback = function(value)
         loopDelay = value
     end    
+})
+
+FBTab:AddButton({
+	Name = "Use Frostbite Ability",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
+  	end    
 })
 
 local OTab = Window:MakeTab({
