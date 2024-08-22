@@ -54,6 +54,17 @@ FBTab:AddButton({
   	end    
 })
 
+FBTab:AddTextbox({
+    Name = "Freeze Someone",
+    Default = "Text",
+    TextDisappear = true,
+    Callback = function(value)
+        teleportToPlayer(value)
+        wait(0.2)
+        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
+    end
+})
+
 local FBNSection = FBTab:AddSection({
 	Name = "Kill Section - Frostbite Abuse"
 })
@@ -264,5 +275,19 @@ CTab:AddButton({
 })
 
 CTab:AddParagraph("End of script","so yeah this is the end of the script so go shoo shoo haah")
+
+local function teleportToPlayer(username)
+    local players = game:GetService("Players")
+    local localPlayer = players.LocalPlayer
+    
+    for _, player in ipairs(players:GetPlayers()) do
+        if string.find(string.lower(player.Name), string.lower(username)) == 1 then
+            if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                localPlayer.Character:MoveTo(player.Character.HumanoidRootPart.Position)
+                break
+            end
+        end
+    end
+end
 
 OrionLib:Init()
