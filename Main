@@ -64,7 +64,7 @@ FBTab:AddButton({
     Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
         wait(0.2)
-        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
+        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("inf")
         wait(0.1)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
         wait(0.1)
@@ -78,11 +78,24 @@ FBTab:AddButton({
     Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
         wait(0.1)
-        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("99")
+        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("inf")
         wait(0.1)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
         wait(0.1)
         game:GetService("ReplicatedStorage").NullAbility:FireServer()
+    end    
+})
+
+FBTab:AddButton({
+    Name = "Kill Nearest Frostbite + Rhythm Explosion",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
+        wait(0.2)
+        game:GetService("ReplicatedStorage").GeneralAbility:FireServer("inf")
+        wait(0.1)
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/LoserGrape/Pooshiesty/main/Death')))()
+        wait(0.1)
+        game:GetService("ReplicatedStorage").rhythmevent:FireServer("AoeExplosion",0)
     end    
 })
 
